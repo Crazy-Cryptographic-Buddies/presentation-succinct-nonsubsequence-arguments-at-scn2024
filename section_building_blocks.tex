@@ -1,0 +1,28 @@
+% !TEX root = main.tex
+\section{Building Blocks}
+\begin{frame}{Multivariate Sumcheck}
+	Given $S \in \FF$ and $f \in \FF[\mu]$ as $\mu$-variate polynomial, multivariate sumcheck \cite{FOCS:LundFKN90} allows one to prove that 
+	\begin{equation*}
+		\sum_{\bi \in \{0,1\}^\mu} f(\bi) = S
+	\end{equation*} 
+	in $\mu$ rounds where, in each row, Prover only sends a univariate polynomail to Verifier to check.
+	
+	The above process reduces to checking a single evaluation $f(\br)$ where $\br = (r_1, \dots, r_\mu) \in \FF^\mu$ is the vector of challenges produced by Verifier among the $\mu$ rounds.
+	
+	Challenges from Verifier are public coins while the final polynomial evaluation $f(\br)$ can be realized by a evaluating from PCS.
+	
+	$\Rightarrow$ Non-interactive via Fiat-Shamir transform and succinct.
+\end{frame}
+
+\begin{frame}{Lookup Arguments from Multivariate Sumcheck}
+	\begin{lemma}[Hab{\"o}ck \cite{EPRINT:Habock22b}]
+		$\{a_j\}_{j \in [\na]} \subseteq \{b_i\}_{i \in [\nb]}$ iff one can determine $(m_i)_{i \in [\nb]}$ s.t.
+		\begin{equation*}
+			\sum_{j \in [\na]}\frac{1}{X - a_j} = \sum_{i \in [\nb]}\frac{m_i}{X - b_i}.
+		\end{equation*}
+	\end{lemma}
+	
+	Proving lookup by probablistically testing $\sum_{j \in [\na]}\frac{1}{\chi - a_j} = \sum_{i \in [\nb]}\frac{m_i}{\chi - b_i}$ from some random $\chi \in \FF$.
+	
+	\makered{arg1} of LHS and RHS can be encoded into polynomials. Hence, applying sumcheck to show both side equal to a common $T \in \FF$.
+\end{frame}
