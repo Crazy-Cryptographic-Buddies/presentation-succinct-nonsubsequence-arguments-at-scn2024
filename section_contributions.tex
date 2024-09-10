@@ -2,8 +2,10 @@
 \section{Our Contributions}
 \begin{frame}{Our Contributions}
 	\begin{itemize}
-		\item A \textit{polynomial interactive oracle proof} (PIOP) for non-subsequence arguments with \underline{efficient} prover time, \underline{succinct} proof size and \underline{sublinear} verifier time. Eventually, we achieve SNARKs for non-subsequences by applying \textit{polynomial commitment schemes} (PCS) in place of PIOP.
+		\item \textbf{Non-Subsequence Arguments.} A \textit{polynomial interactive oracle proof} (PIOP) for non-subsequence arguments with \underline{efficient} prover time, \underline{sublinear} verifier time, and \underline{succinct} proof size. Eventually, we achieve SNARKs for non-subsequences by applying \textit{polynomial commitment schemes} (PCS) in place of PIOP.
 		
-		\item Using Sona PCS \cite{EC:SetThaWah23b}, we achieve \makered{continue here.}
+		\item \textbf{Instantiation.} Using Sona PCS \cite{EC:SetThaWah23b}, we achieve prover time $\BigO(n + N + \size{\Sigma})$, verifier time $\BigO(\sqrt{n} + \sqrt{N} + \sqrt{\size{\Sigma}})$, and proof size $\BigO(\log_2 n + \log_2 N + \log_2 \size{\Sigma})$.
+		
+		\item \textbf{Batch Arguments for (Non-)Subsequences.} We also informally present a transformation for proving in batch $k$ interleaving subsequence and (non-)subsequence arguments.
 	\end{itemize}
 \end{frame}
