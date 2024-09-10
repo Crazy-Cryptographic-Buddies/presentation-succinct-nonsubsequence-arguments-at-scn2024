@@ -1,0 +1,50 @@
+% !TEX root = main.tex
+\section{Introduction}
+\begin{frame}{Introduction}
+	\textbf{SNARKs.} \textit{\underline{Succinct} \underline{Non-Interactive} \underline{Argument of Knowledge}}.
+	\begin{itemize}
+		\item \textit{Argument (of Knowledge).} Prover convinces Verifier about a statement $x$ in which Prover has some underlying witness.
+		\item \textit{Succinct.} Communication cost (proof size) is sublinear in the size of statement $x$.
+		\item \textit{Non-Interactive.} The argument is generated alone by Prover, without interaction with Verifier. Once finished, Verifier only receives the entire argument to verify.
+	\end{itemize}
+\end{frame}
+\begin{frame}{Lookup Arguments}
+	A lookup argument \cite{AC:BCGJM18} proves $\{a_j\}_{j \in [\na]} \subseteq \{b_i\}_{i \in [\nb]}$.
+	
+	\textbf{Applications.} Proving execution of RAM programs.
+	
+	\textbf{SNARK unfriendly.} Lookup arguments were once considered SNARK unfriendly since representing lookup statement by circuits is not efficient.
+	
+	\textbf{Advances.}  $\mathsf{cq}$ \cite{EPRINT:EagFioGab22}, $\mathsf{cq}^+, \mathsf{cq}^{++}$ \cite{PKC:CFFLL24} and $\mathsf{Locq}$ \cite{PKC:ZSG24} based on the following core lemma from Hab{\"o}ck \cite{EPRINT:Habock22b}.
+	\begin{lemma}[Hab{\"o}ck \cite{EPRINT:Habock22b}]
+		$\{a_j\}_{j \in [\na]} \subseteq \{b_i\}_{i \in [\nb]}$ iff one can determine $(m_i)_{i \in [\nb]}$ s.t.
+		\begin{equation*}
+			\sum_{j \in [\na]}\frac{1}{X - a_j} = \sum_{i \in [\nb]}\frac{m_i}{X - b_i}.
+		\end{equation*}
+	\end{lemma}
+\end{frame}
+
+\begin{frame}{Subsequence Arguments}
+	\textbf{Subsequence.} Let $\Sigma$ be an alphabet. \\
+	A string $\bs = (s_1, \dots, s_n) \in \Sigma^n$ is a subsequence of another string $\bt = (t_1, \dots, t_N) \in \Sigma^N$ if, by deleting some characters in $\bt$, one can achieve $\bs$.
+	
+	\textbf{Subsequence Arguments.} Prove that $\bs$ is a subsequence of $\bt$. The solution is somehow straightforward by applying Thakur \cite{EPRINT:Thakur23} to show the existence of $(\id_j)_{j \in [n]}$ satisfying the following system of two lookup arguments.
+	\begin{equation*}
+		\begin{cases}
+			\{(\id_j, s_j)\}_{j \in [n]} \subseteq \{(i, t_i)\}_{i \in [N]},\\
+			\{\id_j - \id_{j - 1}\}_{j \in [2, n]} \subseteq [N] &\text{i.e., $\id_1 < \dots < \id_N$}.
+		\end{cases}
+	\end{equation*}
+\end{frame}
+
+\begin{frame}{Non-Subsequence Arguments}
+	\textbf{Non-Subsequence Arguments.} Prove that $\bs$ is not a subsequence of $\bt$.
+	
+	\textbf{Applications.} \makered{Fill here.}
+	
+	\textbf{SNARKs for Non-Subsequences.} Non-trivial since one needs to check $\binom{N}{n}$ possible subsequence arguments.
+	
+	\begin{center}
+		\emph{Can we construct succinct non-subsequence arguments with efficient proving time and sublinear verification time?}
+	\end{center}
+\end{frame}

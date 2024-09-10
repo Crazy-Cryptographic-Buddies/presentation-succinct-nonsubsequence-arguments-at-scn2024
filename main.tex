@@ -1,0 +1,58 @@
+\documentclass{beamer}
+\usepackage{color,soul}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{pifont}
+\usepackage[bb=stix]{mathalpha}
+\usepackage{amsfonts}
+\usepackage{mathalfa}
+\usepackage{stmaryrd}
+\usetikzlibrary{shapes,fit}
+\usetikzlibrary{arrows, positioning, calc}
+\usetikzlibrary{trees}
+\usepackage{pifont}
+\usepackage{xspace}
+
+\usetheme{metropolis}
+
+\input{macros.tex}
+
+\title{Succinct Non-Subsequence Arguments}
+\date{13 September 2024}
+\author{ S. Ling\and \textbf{K. H. Tang}\and K. Vu\and H. Wang\and Y. Yan}
+
+\AtBeginSection[]{
+	\begin{frame}
+		\vfill
+		\centering
+		\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
+			\usebeamerfont{title}\insertsectionhead\par%
+		\end{beamercolorbox}
+		\vfill
+	\end{frame}
+}
+
+\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	\begin{frame}{Outline}
+		\tableofcontents
+	\end{frame}
+	
+	\input{section_introduction}
+	
+	\begin{frame}[allowframebreaks]{References}
+		\setbeamertemplate{bibliography item}[text]
+		\bibliographystyle{alpha}
+		\bibliography{refs.bib}
+		
+	\end{frame}
+\end{document}
