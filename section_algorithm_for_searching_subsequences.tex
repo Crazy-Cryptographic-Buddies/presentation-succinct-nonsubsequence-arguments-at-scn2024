@@ -1,2 +1,17 @@
 % !TEX root = main.tex
 \section{Algorithm for Searching Subsequences}
+\begin{frame}{Searching Subsequences}
+	\textbf{Dynamic Programming Approach.} \\
+	For $j \in [N]$, define $p_j$ to be the \underline{maximum value} such that 
+	\begin{equation*}
+		\textbf{$(s_1, \dots, s_{p_j})$ is a prefix of $(t_1, \dots, t_j)$.}
+	\end{equation*}
+	
+	\textbf{Observation.} If $p_{j - 1}$ is determined, then
+	\begin{equation*}
+		\begin{cases}
+			p_j = p_{j - 1} + 1 &\text{if $s_{p_{j - 1} + 1} = t_j$},\\
+			p_j = p_{j - 1} &\text{otherwise}.
+		\end{cases}
+	\end{equation*}
+\end{frame}

@@ -111,3 +111,47 @@
 	@doi={10.1109/FSCS.1990.89518},
 	@publisher="IEEE",
 }
+
+@InProceedings{CRYPTO:FiaSha86,
+	author="Fiat, Amos
+	and Shamir, Adi",
+	@editor="Odlyzko, Andrew M.",
+	title="{How To Prove Yourself: Practical Solutions to Identification and Signature Problems}",
+	booktitle="CRYPTO 1986",
+	year="1987",
+	@publisher="Springer Berlin Heidelberg",
+	@address="Berlin, Heidelberg",
+	@pages="186--194",
+	@abstract="In this paper we describe simple identification and signature schemes which enable any user to prove his identity and the authenticity of his messages to any other user without shared or public keys. The schemes are provably secure against any known or chosen message attack if factoring is difficult, and typical implementations require only 1{\%} to 4{\%} of the number of modular multiplications required by the RSA scheme. Due to their simplicity, security and speed, these schemes are ideally suited for microprocessor-based devices such as smart cards, personal computers, and remote control systems.",
+	@isbn="978-3-540-47721-1",
+	@doi="10.1007/3-540-47721-7_12",
+	@volume="263",
+	@series="Lecture Notes in Computer Science",
+}
+
+@Misc{EPRINT:GabWil20,
+	author =       "Ariel Gabizon and
+	Zachary J. Williamson",
+	title =        "{plookup: {A} simplified polynomial protocol for lookup tables}",
+	year =         2020,
+	howpublished = "Cryptology ePrint Archive, Paper 2020/315",
+	@note =         "\url{https://eprint.iacr.org/2020/315}",
+}
+
+@inproceedings{CCS:ZBKMNS22,
+	author = {Zapico, Arantxa and Buterin, Vitalik and Khovratovich, Dmitry and Maller, Mary and Nitulescu, Anca and Simkin, Mark},
+	title = {{Caulk: Lookup Arguments in Sublinear Time}},
+	year = {2022},
+	@isbn = {9781450394505},
+	@publisher = {Association for Computing Machinery},
+	@address = {New York, NY, USA},
+	@url = {https://doi.org/10.1145/3548606.3560646},
+	@doi = {10.1145/3548606.3560646},
+	@abstract = {We present position-hiding linkability for vector commitment schemes: one can prove in zero knowledge that one or m values that comprise commitment cm all belong to the vector of size N committed to in com. Our construction textsfCaulk can be used for membership proofs and lookup arguments and outperforms all existing alternatives in prover time by orders of magnitude.  For both single- and multi-membership proofs the textsfCaulk protocol beats SNARKed Merkle proofs by the factor of 100 even if the latter is instantiated with Poseidon hash. Asymptotically our prover needs O(m^2 + m\l{}og N) time to prove a batch of m openings, whereas proof size is O(1) and verifier time is O(\l{}og(\l{}og N)). As a lookup argument, textsfCaulk is the first scheme with prover time sublinear in the table size, assuming O(N\l{}og N) preprocessing time and O(N) storage. It can be used as a subprimitive in verifiable computation schemes in order to drastically decrease the lookup overhead.  Our scheme comes with a reference implementation and benchmarks.},
+	booktitle = {CCS 2022},
+	@pages = {3121–3134},
+	@numpages = {14},
+	@keywords = {zero-knowledge, vector commitments, lookup arguments},
+	@location = {Los Angeles, CA, USA},
+	@series = {CCS '22}
+}

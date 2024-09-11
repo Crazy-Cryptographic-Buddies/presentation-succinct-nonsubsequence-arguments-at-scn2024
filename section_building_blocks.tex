@@ -1,5 +1,8 @@
 % !TEX root = main.tex
 \section{Building Blocks}
+\begin{frame}{Multivariate Polynomial Commitment}
+	\makered{Write here.}
+\end{frame}
 \begin{frame}{Multivariate Sumcheck}
 	Given $S \in \FF$ and $f \in \FF[\mu]$ as $\mu$-variate polynomial, multivariate sumcheck \cite{FOCS:LundFKN90} allows one to prove that 
 	\begin{equation*}
@@ -11,7 +14,7 @@
 	
 	Challenges from Verifier are public coins while the final polynomial evaluation $f(\br)$ can be realized by a evaluating from PCS.
 	
-	$\Rightarrow$ Non-interactive via Fiat-Shamir transform and succinct.
+	$\Rightarrow$ Non-interactive via Fiat-Shamir transform \cite{CRYPTO:FiaSha86} and succinct.
 \end{frame}
 
 \begin{frame}{Lookup Arguments from Multivariate Sumcheck}
@@ -24,5 +27,5 @@
 	
 	Proving lookup by probablistically testing $\sum_{j \in [\na]}\frac{1}{\chi - a_j} = \sum_{i \in [\nb]}\frac{m_i}{\chi - b_i}$ from some random $\chi \in \FF$.
 	
-	\makered{arg1} of LHS and RHS can be encoded into polynomials. Hence, applying sumcheck to show both side equal to a common $T \in \FF$.
+	Addends of LHS and RHS are encoded into polynomials. Hence, applying sumcheck to show both side equal to a common $T \in \FF$.
 \end{frame}
