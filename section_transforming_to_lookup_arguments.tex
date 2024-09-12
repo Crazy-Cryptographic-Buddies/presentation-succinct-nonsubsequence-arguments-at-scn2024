@@ -29,5 +29,61 @@
 	
 	Define $\enc(\bs_\perp)  = \{(c, \ell, v) \in \{0,1\}\times[n+1]\times\Sigma\cup\{\perp\} : c = (s_\ell = v)\}$.
 	
-	\makered{Continue here.}
+	Then,
+	$
+		\eqref{equation:system-of-equivalences-for-constraints-2-and-3} \iff (p_j - p_{j - 1}, p_{j - 1} + 1, t_j) \in \enc(\bs_\perp).
+	$
+	
+	\begin{center}
+		\textbf{How to guarantee well-formedness of $\enc(\bs_\perp)$?}
+	\end{center}
+\end{frame}
+
+\begin{frame}{An observation from $\enc(\bs_\perp)$}
+	$\enc(\bs_\perp)  = \{(c, \ell, v) \in \{0,1\}\times[n+1]\times\Sigma\cup\{\perp\} : c = (s_\ell = v)\}$.
+	
+	$\size{\enc(\bs_\perp)} = (n + 1)\cdot (\size{\Sigma} + 1) = \BigO(n \times \size{\Sigma})$ which is inefficient.
+	
+	\begin{center}
+		\textbf{Is there any alternative way?}
+	\end{center}
+\end{frame}
+
+\begin{frame}{An Alternative Approach}
+	%Recall from \eqref{equation:system-of-equivalences-for-constraints-2-and-3} 
+	\begin{equation*}
+		\begin{cases}
+			p_j - p_{j - 1} = 1 \iff s_{p_{j - 1} + 1} = t_j,\\ 
+			p_j - p_{j - 1} = 0 \iff s_{p_{j - 1} + 1} \not= t_j.
+		\end{cases}
+	\end{equation*}
+	
+	Let $v_j := s_{p_{j - 1} + 1}$. Well-formedness of $(v_j)_{j \in [N]}$ is guaranteed by
+	\begin{equation*}
+		\{(p_{j - 1} + 1, v_j)\}_{j \in [N]} \subseteq \{(j, s_j)\}_{j \in [n + 1]}.
+	\end{equation*}
+	
+	Then, to determine $ c_j = (s_{p_{j - 1} + 1} = t_j)$, we instead determine whether $c_j = (v_j = t_j)$. One hence checks whether $p_j - p_{j - 1} = c_j$.
+	
+	$
+		\begin{cases}
+			v_j = t_j \iff v_j - t_j = 0,\\ v_j\not=t_j\iff v_j - t_j \in [-\size{\Sigma}, \size{\Sigma}]\setminus\{0\}
+		\end{cases}
+	$ 
+	
+	$
+		\Rightarrow \{(p_j - p_{j - 1}, v_j - t_j)\}_{j \in [N]} \subseteq \{(0, i)\}_{i \in [-\size{\Sigma}, \size{\Sigma}]\setminus\{0\}} \cup \{(1, 0)\}.
+	$
+\end{frame}
+
+\begin{frame}{Final Theorem}
+	$\bs$ is a subsequence (respectively, non-subsequence) of $\bt$  iff there exist $s_{n+1}$, $(p_j)_{j \in [0, N]}$, with $p_0=0$ by default,  and $(v_j)_{j \in [N]}$ s.t.
+	\begin{equation*}%\label{equation:constraints-for-wellformedness-of-b-in-single-subsequence-argument}
+		\begin{cases}
+			\{s_j\}_{j \in [n]} \subseteq \Sigma,\quad s_{n+1} = \perp,\quad \{t_j\}_{j \in [N]} \subseteq \Sigma,\\
+			\{(p_{j - 1} + 1, v_j)\}_{j \in [N]} \subseteq \{(j, s_j)\}_{j \in [n+1]},\\
+			\{(p_j - p_{j - 1}, t_j - v_j)\}_{j \in [N]} \subseteq \{(0,i)\}_{i \in [-\size{\Sigma}, \size{\Sigma}]\setminus\{0\}} \cup \{(1, 0)\},
+		\end{cases}
+	\end{equation*}
+	and $p_N < n$ (respectively, $p_N = n$).
 \end{frame}

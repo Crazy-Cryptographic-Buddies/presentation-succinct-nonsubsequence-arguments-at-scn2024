@@ -1,0 +1,27 @@
+% !TEX root = main.tex
+\section{Efficiency}
+\begin{frame}{Efficiency}
+	\textbf{Construction.}
+	\begin{itemize}
+		\item \textit{Input size.}  $\BigO(\cs(l_n)+ \cs(l_N)+\cs(l_\Sigma) )$.
+		\item \textit{Proof size.} $
+		\BigO(\cs(l_N) +l_n +l_N+l_\Sigma+ \ps(l_n)+  \ps(l_N) + \ps(l_\Sigma) )
+		$.
+		\item \textit{Prover time.} 
+		$
+		\BigO(n+N + \size{\Sigma} + \tp(l_n)+  \tp(l_N)+\tp(l_\Sigma) )
+		$.
+		\item \textit{Verifier time.} 
+		$
+		\BigO(l_n + l_N + l_\Sigma + \tv(l_n) + \tv(l_N)+\tv(l_\Sigma) )
+		$.
+	\end{itemize}
+	
+	\smallskip\noindent\textbf{Instantiation.} When instantiating with Sona PCS \cite{EC:SetThaWah23b}, 
+	\begin{itemize}
+		\item \textit{Input size.} $\BigO(1) \HH$.
+		\item \textit{Proof size.} $\BigO(l_n + l_N + l_\Sigma)\FF$, $\BigO(1) \HH$ and $\BigO(1) \GG$.
+		\item \textit{Prover time.} $\BigO(n+N+ \size{\Sigma}) \FF$, $\BigO(\sqrt{n}+ \sqrt{N} +\sqrt{\size{\Sigma}} ) \GG$.
+		\item \textit{Verifier time.} $\BigO(\sqrt{n}+ \sqrt{N} +\sqrt{\size{\Sigma}}) \GG$.
+	\end{itemize}
+\end{frame}

@@ -1,7 +1,13 @@
 % !TEX root = main.tex
 \section{Building Blocks}
 \begin{frame}{Multivariate Polynomial Commitment}
-	\makered{Write here.}
+	A polynomial commitment scheme (PCS, \cite{AC:KatZavGol10}) is a tuple $$(\Setup, \Com, \Open, \Eval).$$
+	\begin{itemize}
+		\item $ \Setup(1^\lambda)\to\pp$
+		\item $\Com(\pp, f(\vec{X}))\to(\sigma(f), \aux)$
+		\item $\Open(\pp, \sigma(f), f(\vec{X}), \aux)\to b$
+		\item $ \Eval \innerproduct {\Prover( f(\vec{X}), \aux )} {\Verifier} (\pp, \sigma(f), \br, e)\to b$
+	\end{itemize}
 \end{frame}
 \begin{frame}{Multivariate Sumcheck}
 	Given $S \in \FF$ and $f \in \FF[\mu]$ as $\mu$-variate polynomial, multivariate sumcheck \cite{FOCS:LundFKN90} allows one to prove that 
