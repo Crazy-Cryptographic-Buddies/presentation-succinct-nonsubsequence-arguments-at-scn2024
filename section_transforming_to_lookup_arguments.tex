@@ -1,2 +1,33 @@
 % !TEX root = main.tex
 \section{Transforming Subsequence Searching\\ to Lookup Arguments}
+\begin{frame}{Recalling Constraints}
+	We would like to construct the sequence $(p_j)_{j \in [0, N]}$ with $p_0 = 0$ satisfying three constraints:
+	\begin{itemize}
+		\item Constraint 1: $p_j = p_{j - 1}$ if $p_{j - 1} = N$;\\
+		\item Constraint 2: $p_j = p_{j - 1} + 1$ if $s_{p_{j - 1} + 1} = t_j$; and\\
+		\item Constraint 3: $p_j = p_{j - 1}$, otherwise (when $s_{p_{j - 1} + 1} \not= t_j$).
+	\end{itemize}
+	
+	\textbf{Handling Constraint 1.} Appending $\perp$ to the end of $\bs$, i.e.,
+	\begin{equation*}
+		\bs_\perp = (\bs\Vert\!\perp) = (s_1, \dots, s_n, \perp).
+	\end{equation*}
+	$\Rightarrow$ Constraint 1 is implied by constraint 3 since $\perp \not= v~\forall v \in \Sigma$.
+\end{frame}
+\begin{frame}{Handling Constraints 2 and 3}
+	\textbf{From constraint 2:} $p_j = p_{j - 1} + 1$ if $s_{p_{j - 1} + 1} = t_j$.
+	
+	\textbf{From constraint 3:} $p_j = p_{j - 1}$ if $s_{p_{j - 1} + 1} \not= t_j$.
+	
+	We have the equivalences
+	\begin{equation}\label{equation:system-of-equivalences-for-constraints-2-and-3}
+		\begin{cases}
+			p_j - p_{j - 1} = 1 \iff s_{p_{j - 1} + 1} = t_j,\\ 
+			p_j - p_{j - 1} = 0 \iff s_{p_{j - 1} + 1} \not= t_j.
+		\end{cases}
+	\end{equation}
+	
+	Define $\enc(\bs_\perp)  = \{(c, \ell, v) \in \{0,1\}\times[n+1]\times\Sigma\cup\{\perp\} : c = (s_\ell = v)\}$.
+	
+	\makered{Continue here.}
+\end{frame}

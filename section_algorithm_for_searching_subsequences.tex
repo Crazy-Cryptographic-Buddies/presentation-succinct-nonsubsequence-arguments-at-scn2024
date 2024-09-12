@@ -6,12 +6,22 @@
 	\begin{equation*}
 		\textbf{$(s_1, \dots, s_{p_j})$ is a prefix of $(t_1, \dots, t_j)$.}
 	\end{equation*}
+	By default, $p_0 = 0$.
 	
 	\textbf{Observation.} If $p_{j - 1}$ is determined, then
 	\begin{equation*}
 		\begin{cases}
+			p_j = p_{j - 1} &\text{if $p_{j - 1} = N$},\\
 			p_j = p_{j - 1} + 1 &\text{if $s_{p_{j - 1} + 1} = t_j$},\\
 			p_j = p_{j - 1} &\text{otherwise}.
 		\end{cases}
+	\end{equation*}
+	
+	Hence,
+	\begin{equation*}
+		\begin{aligned}
+			&p_N < n \Rightarrow \text{subsequence},\\
+			&p_N = n \Rightarrow \text{non-subsequence}.
+		\end{aligned}
 	\end{equation*}
 \end{frame}
