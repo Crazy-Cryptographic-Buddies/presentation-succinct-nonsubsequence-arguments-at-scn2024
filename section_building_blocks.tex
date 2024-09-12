@@ -14,11 +14,11 @@
 	\begin{equation*}
 		\sum_{\bi \in \{0,1\}^\mu} f(\bi) = S
 	\end{equation*} 
-	in $\mu$ rounds where, in each row, Prover only sends a univariate polynomail to Verifier to check.
+	in $\mu$ rounds where, in each row, Prover only sends a univariate polynomial to Verifier to check.
 	
 	The above process reduces to checking a single evaluation $f(\br)$ where $\br = (r_1, \dots, r_\mu) \in \FF^\mu$ is the vector of challenges produced by Verifier among the $\mu$ rounds.
 	
-	Challenges from Verifier are public coins while the final polynomial evaluation $f(\br)$ can be realized by a evaluating from PCS.
+	Challenges from Verifier are public coins while the final polynomial evaluation $f(\br)$ can be realized by evaluating from PCS.
 	
 	$\Rightarrow$ Non-interactive via Fiat-Shamir transform \cite{CRYPTO:FiaSha86} and succinct.
 \end{frame}
@@ -33,5 +33,5 @@
 	
 	Proving lookup by probablistically testing $\sum_{j \in [\na]}\frac{1}{\chi - a_j} = \sum_{i \in [\nb]}\frac{m_i}{\chi - b_i}$ from some random $\chi \in \FF$.
 	
-	Addends of LHS and RHS are encoded into polynomials. Hence, applying sumcheck to show both side equal to a common $T \in \FF$.
+	Addends of LHS and RHS are encoded into polynomials. Hence, applying sumcheck to show both sides equal to a common $T \in \FF$.
 \end{frame}
